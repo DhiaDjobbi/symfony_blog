@@ -1,0 +1,42 @@
+<div class="border-end bg-light" id="sidebar-wrapper" style="color:white;">
+	<a href="{{ path('index') }}">
+		<div class="sidebar-heading border-bottom bg-dark">
+			<img src="{{ asset('icon.png') }}" width="30" height="30" class="d-inline-block align-top me-3" alt="Logo">
+			<b style="color:white;" >Symfony Ad</b>
+		</div>
+		<div class="list-group list-group-flush">
+			{% if app.user %}
+				<a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">
+					<i class="fas fa-tachometer-alt me-1"></i>
+					Dashboard
+				</a>
+				{% if  is_granted('ROLE_ADMIN') %}
+					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ path("user_index") }}">
+						<i class="fas fa-users me-1"></i>
+						Users
+					</a>
+				{% endif %}
+
+				{% if is_granted("ROLE_ADMIN") %}
+					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ path("product_index") }}">
+						<i class="fas fa-list me-1"></i>
+						Products
+					</a>
+				{% else %}
+					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ path("my_products") }}">
+						<i class="fas fa-list me-1"></i>
+						My Products
+					</a>
+				{% endif %}
+
+				{% if  is_granted('ROLE_ADMIN') %}
+					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ path("category_index") }}">
+						<i class="fas fa-sitemap me-1"></i>
+						Categories
+					</a>
+				{% endif %}
+
+			{% endif %}
+		</div>
+	</a>
+</div>
