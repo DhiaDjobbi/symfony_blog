@@ -11,7 +11,7 @@
 					Dashboard
 				</a>
 				{% if  is_granted('ROLE_ADMIN') %}
-					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
+					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ path("user_index") }}">
 						<i class="fas fa-users me-1"></i>
 						Users
 					</a>
