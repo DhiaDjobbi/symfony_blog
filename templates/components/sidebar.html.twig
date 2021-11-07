@@ -11,26 +11,26 @@
 					Dashboard
 				</a>
 				{% if  is_granted('ROLE_ADMIN') %}
-					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ path("user_index") }}">
+					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
 						<i class="fas fa-users me-1"></i>
 						Users
 					</a>
 				{% endif %}
 
 				{% if is_granted("ROLE_ADMIN") %}
-					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ path("product_index") }}">
+					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
 						<i class="fas fa-list me-1"></i>
 						Products
 					</a>
 				{% else %}
-					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ path("my_products") }}">
+					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
 						<i class="fas fa-list me-1"></i>
 						My Products
 					</a>
 				{% endif %}
 
 				{% if  is_granted('ROLE_ADMIN') %}
-					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ path("category_index") }}">
+					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
 						<i class="fas fa-sitemap me-1"></i>
 						Categories
 					</a>
