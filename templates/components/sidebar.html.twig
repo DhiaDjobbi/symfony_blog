@@ -2,7 +2,7 @@
 	<a href="{{ path('index') }}">
 		<div class="sidebar-heading border-bottom bg-dark">
 			<img src="{{ asset('icon.png') }}" width="30" height="30" class="d-inline-block align-top me-3" alt="Logo">
-			<b style="color:white;" >Symfony Ad</b>
+			<b style="color:white; text-decoration:none;" >Symfony Blog</b>
 		</div>
 		<div class="list-group list-group-flush">
 			{% if app.user %}
@@ -18,14 +18,14 @@
 				{% endif %}
 
 				{% if is_granted("ROLE_ADMIN") %}
-					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
+					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ path("article_index") }}">
 						<i class="fas fa-list me-1"></i>
-						Products
+						Articles
 					</a>
 				{% else %}
-					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="">
+					<a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ path("article_index") }}">
 						<i class="fas fa-list me-1"></i>
-						My Products
+						My Articles
 					</a>
 				{% endif %}
 

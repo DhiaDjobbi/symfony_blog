@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article
+{% endblock %}
+
+{% block body %}
+	<div class="container my-4">
+		<h2>Article Number #{{ article.id }}</h2>
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Title</th>
+					<td>{{ article.title }}</td>
+				</tr>
+				<tr>
+					<th>Author</th>
+					<td>{{ article.author.getEmail() }}</td>
+				</tr>
+				<tr>
+					<th>Title</th>
+					<td>{{ article.title }}</td>
+				</tr>
+				<tr>
+					<th>Image</th>
+					<td>
+						<img class="img" width="120" height="120" src="/articles_images/{{ article.image }}" alt="Article Image">
+					</td>
+				</tr>
+				<tr>
+					<th>CreatedAt</th>
+					<td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="py-2">
+			<a class="btn btn-dark" href="{{ path('article_index') }}">Go Back</a>
+			<a class="btn btn-primary" href="{{ path('article_edit', {'id': article.id}) }}">Edit</a>
+		</div>
+	</div>
+{% endblock %}

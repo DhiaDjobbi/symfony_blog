@@ -1,0 +1,8 @@
+<form method="post" action="{{ path('article_delete', {'id': article.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+	<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ article.id) }}">
+	<div>
+		<a style="display: inline-block !important;" class="btn btn-sm btn-dark" href="{{ path('article_show', {'id': article.id}) }}">show</a>
+		<a style="display: inline-block !important;" class="btn btn-sm btn-warning" href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+		<button style="display: inline-block !important;"class="btn btn-danger btn-sm">Delete</button>
+	</div>
+</form>

@@ -1,0 +1,13 @@
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+{{ form_row(form.title) }}
+{{ form_row(form.content) }}
+{{ form_row(form.image, {'attr': {'accept': ".png,.jpg,.jpeg"}}) }}
+<div class="mb-3">
+	{% if is_granted("ROLE_ADMIN") %}
+		<a href="{{ path('article_index') }}" class="btn btn-warning">Go Back</a>
+	{% else %}
+		<a href="{{ path('article_index') }}" class="btn btn-warning">Go Back</a>
+	{% endif %}
+	<button type="submit" class="btn btn-primary">Submit</button>
+</div>
+{{ form_end(form) }}
