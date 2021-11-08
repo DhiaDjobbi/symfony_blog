@@ -26,7 +26,7 @@
 					<tr>
 						<td>{{ article.id }}</td>
 						<td class="col-2">{{ article.title }}</td>
-						<td class="col-1">{{ article.author.getEmail() }}</td>
+						<td class="col-1">{{ article.author.getFullname() }}</td>
 						<td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i') : '' }}</td>
 						<td class="col-3"> {{ article.content |u.truncate(80, '...') }}</td>
 						<td>

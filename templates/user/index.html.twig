@@ -10,6 +10,7 @@
 			<thead class="table-dark">
 				<tr>
 					<th>Id</th>
+					<th>Fullname</th>
 					<th>Email</th>
 					{# <th>Nb Products</th> #}
 					<th>actions</th>
@@ -19,6 +20,7 @@
 				{% for user in users %}
 					<tr>
 						<td>{{ user.id }}</td>
+						<td>{{ user.fullname }}</td>
 						<td>{{ user.email }}</td>
 						{# <td>{{ user.getProducts()|length }}</td> #}
 						<td>

@@ -14,21 +14,21 @@
 				</tr>
 				<tr>
 					<th>Author</th>
-					<td>{{ article.author.getEmail() }}</td>
+					<td>{{ article.author.getFullname() }}</td>
 				</tr>
 				<tr>
-					<th>Title</th>
-					<td>{{ article.title }}</td>
+					<th>CreatedAt</th>
+					<td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i') : '' }}</td>
+				</tr>
+				<tr>
+					<th>Content</th>
+					<td>{{ article.content }}</td>
 				</tr>
 				<tr>
 					<th>Image</th>
 					<td>
 						<img class="img" width="120" height="120" src="/articles_images/{{ article.image }}" alt="Article Image">
 					</td>
-				</tr>
-				<tr>
-					<th>CreatedAt</th>
-					<td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
 				</tr>
 			</tbody>
 		</table>

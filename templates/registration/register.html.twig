@@ -40,6 +40,22 @@
 							<div class="col-md-7 pe-0 mb-5">
 								<div class="form-left h-100 py-5 px-5">
 									{{ form_start(registrationForm, {'attr': {"novalidate": "novalidate"}})}}
+									
+
+									<div class="col-12 mb-3">
+										<label class="my-2">Fullname<span class="text-danger">*</span>
+										</label>
+										<div class="input-group">
+											<div class="input-group-text">
+												<i class="fas fa-user-edit"></i>
+											</div>
+											{{ form_widget(registrationForm.fullname) }}
+										</div>
+										<span class="text-muted" style='color:#dc3545;'>
+											{{ form_errors(registrationForm.fullname) }}
+										</span>
+									</div>
+
 									<div class="col-12 mb-3">
 										<label class="my-2">Email<span class="text-danger">*</span>
 										</label>
