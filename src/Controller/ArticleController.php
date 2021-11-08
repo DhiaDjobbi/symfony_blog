@@ -110,10 +110,15 @@ class ArticleController extends AbstractController
     public function delete(Request $request, Article $article): Response
     {
         if ($this->isCsrfTokenValid('delete'.$article->getId(), $request->request->get('_token'))) {
+        
+            $fs = new Filesystem();
+            $fs->remove($this->getParameter('articles_directory') . "/" . $article->getImage());
+        
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($article);
             $entityManager->flush();
         }
+
 
         return $this->redirectToRoute('article_index', [], Response::HTTP_SEE_OTHER);
     }
